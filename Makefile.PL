@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile
         (
         'NAME'     => 'Test::Manifest',
-        'VERSION'  => '0.6',
+        'VERSION'  => '0.6_02',
 		'PREREQ_PM' => {
 			'Text::Diff'       => 0,
 			'Test::Pod'        => 0,
