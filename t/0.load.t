@@ -1,18 +1,6 @@
-# $Id: 0.load.t,v 1.3 2002/10/10 04:19:16 comdog Exp $
+# $Id: 0.load.t,v 1.4 2004/09/02 20:56:40 comdog Exp $
 
-use lib qw(./blib/lib);
+use Test::More tests => 1;
 
-print "1..1\n";
-
-local( $@, $! );
-
-eval <<USE;
-package main;
-require Test::Manifest;
-Test::Manifest->import;
-USE
-
-print "bail out! Test::Manifest could not compile.\n$@\n"
-	if $@;
-
-print "ok - Test::Manifest compiles\n";
+print "bail out! Test::Manifest could not compile.\n"
+	unless use_ok( "Test::Manifest" );

@@ -1,4 +1,9 @@
-$Id: Changes,v 1.5 2003/07/30 19:15:58 petdance Exp $
+$Id: Changes,v 1.6 2004/02/20 20:14:07 comdog Exp $
+
+0.93 - Fri Feb 20 15:18:23 2004
+	* some minor tweaks for warnings, clarity
+	* docs show way to make Test::Manifest optional (should have thought 
+	of it sooner)
 
 0.92 - Wed Jul 30 14:10:00 2003
         * Made tests run clean under warnings.
