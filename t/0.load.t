@@ -1,23 +1,24 @@
-# $Id: 0.load.t,v 1.1.1.1 2002/08/18 08:14:29 comdog Exp $
-BEGIN { $| = 1; print "1..2\n"; }
-END   {print "not ok\n" unless $loaded;}
+# $Id: 0.load.t,v 1.2 2002/09/03 18:47:36 comdog Exp $
+BEGIN {
+	use File::Find::Rule;
+	@classes = map { my $x = $_;
+		$x =~ s|^blib/lib/||;
+		$x =~ s|/|::|g;
+		$x =~ s|\.pm$||;
+		$x;
+		} File::Find::Rule->file()->name( '*.pm' )->in( 'blib/lib' );
+	}
 
-# Test it loads
-use Test::Manifest;
-$loaded = 1;
-print "ok\n";
-
-my $test_manifest = 'test_manifest';
-
-eval {
-	die "cannot open $test_manifest! $!"
-		unless open my $in, $test_manifest;
-		
-	die "cannot open $test_manifest! $!"
-		unless open my $out, "> t/$test_manifest";
-		
-	while( <$in> ) { print $out $_ };
-	};
-print STDERR $@ if $@;
-print $@ ? 'not ' : '', "ok\n";
+use Test::More tests => @classes + 2;
 	
+foreach my $class ( @classes )
+	{
+	use_ok( $class );
+	}
+
+my( $test_manifest, $in, $out ) = qw(test_manifest);
+
+ok( open( $in, $test_manifest ),        'Open test_manifest' );
+ok( open( $out, "> t/$test_manifest" ), 'Create test_manifest' );
+				
+while( <$in> ) { print $out $_ };
