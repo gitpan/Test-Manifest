@@ -1,4 +1,11 @@
-$Id: Changes,v 1.6 2004/02/20 20:14:07 comdog Exp $
+$Id: Changes,v 1.7 2004/09/02 21:01:06 comdog Exp $
+
+0.95 - Thu Sep  2 15:59:26 2004
+* Test::Manifest is now more tolerant of sloppiness.  It strips leading
+and trailing whitespace as it reads lines from test_manifest, and it
+skips comment lines.  
+* If you already have Test::Manifest, you don't need to rush to get this
+new version unless you have a problem with whitespace issues.
 
 0.93 - Fri Feb 20 15:18:23 2004
 	* some minor tweaks for warnings, clarity

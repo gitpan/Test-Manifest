@@ -1,5 +1,7 @@
-# $Id: Makefile.PL,v 1.6 2002/12/11 06:46:25 comdog Exp $
+# $Id: Makefile.PL,v 1.7 2004/09/03 02:42:58 comdog Exp $
 use ExtUtils::MakeMaker;
+
+require 5.006;
 
 WriteMakefile
         (
