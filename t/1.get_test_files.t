@@ -1,4 +1,4 @@
-# $Id: 1.get_test_files.t,v 1.3 2002/10/10 04:19:16 comdog Exp $
+# $Id: 1.get_test_files.t,v 1.5 2003/07/30 19:13:34 petdance Exp $
 use strict;
 
 use Test::More tests => 7;
@@ -20,13 +20,14 @@ close OUT;
 my @tests = ();
 
 print "bail out! Could not open manifest!"
-	unless open my $in, $test_manifest;
+	unless open( my $in, $test_manifest );
 
 while( <$in> )
 	{
 	chomp;
 	push @tests, $_;
 	}
+close $in;
 
 my $expected = join " ", map { "t/$_" } @tests;
 
