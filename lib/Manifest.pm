@@ -1,4 +1,4 @@
-# $Id: Manifest.pm,v 1.3 2002/10/10 04:19:16 comdog Exp $
+# $Id: Manifest.pm,v 1.4 2002/12/11 06:46:25 comdog Exp $
 package Test::Manifest;
 use strict;
 
@@ -11,8 +11,8 @@ use Exporter;
 @EXPORT    = qw(run_t_manifest);
 @EXPORT_OK = qw(get_t_files make_test_manifest manifest_name);
 
-#$VERSION = sprintf "%d.%02d", q$Revision: 1.3 $ =~ m/(\d+) . (\d+)/x;
-$VERSION = 0.9;
+#$VERSION = sprintf "%d.%02d", q$Revision: 1.4 $ =~ m/(\d+) . (\d+)/x;
+$VERSION = 0.91;
 
 my $Manifest = "t/test_manifest";
 
@@ -49,7 +49,10 @@ Run all of the files in t/test_manifest through Test::Harness:runtests
 in the order they appear in the file.
 
 If you want to use this, in Makefile.PL you need to override some 
-MakeMaker magic (after you load ExtUtils::MakeMaker).
+MakeMaker magic (after you load ExtUtils::MakeMaker).  I recommend
+putting something like this directly in Makefile.PL so it does not
+depend on anything else.  A Makefile.PL with dependencies is a big
+headache.
 
 	sub ExtUtils::MM_Any::test_via_harness
 		{
