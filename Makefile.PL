@@ -1,10 +1,17 @@
-# $Id: Makefile.PL,v 1.2 2002/08/19 05:20:13 comdog Exp $
+# $Id: Makefile.PL,v 1.3 2002/09/30 05:56:00 comdog Exp $
 use ExtUtils::MakeMaker;
+
+open IN,  'test_manifest';
+open OUT, '> t/test_manifest';
+while( <IN> ) { print OUT };
+close IN;
+close OUT;
 
 WriteMakefile
         (
-        'NAME'     => 'Test::Manifest',
-        'VERSION'  => '0.7',
+        'NAME'          => 'Test::Manifest',
+        'VERSION_FROM'  => 'lib/Manifest.pm',
+        
 		'PREREQ_PM' => {
 			'File::Find::Rule' => '0',
 			'Test::Data'       => '0',
@@ -13,6 +20,7 @@ WriteMakefile
 			'Test::Prereq'     => '0',
 			'Text::Diff'       => '0',
 			},
+			
         'PM'       => 
         	{
             'lib/Manifest.pm'  => '$(INST_LIBDIR)/Manifest.pm',

@@ -1,14 +1,18 @@
+# $Id$
 package Test::Manifest;
 use strict;
 
 use base qw(Exporter);
-use vars qw(@EXPORT_OK @EXPORT);
+use vars qw(@EXPORT_OK @EXPORT $VERSION);
 
 use Carp qw(carp);
 use Exporter;
 
 @EXPORT    = qw(run_t_manifest);
 @EXPORT_OK = qw(get_t_files make_test_manifest manifest_name);
+
+#$VERSION = sprintf "%d.%02d", q$Revision$ =~ m/(\d+) . (\d+)/x;
+$VERSION = 0.8;
 
 my $Manifest = "t/test_manifest";
 
@@ -42,6 +46,21 @@ do the right thing.
 =over 4
 
 =item run_t_manifest
+
+Run all of the files in t/test_manifest through Test::Harness:runtests
+in the order they appear in the file.
+
+If you want to use this, in Makefile.PL you need to override some 
+MakeMaker magic (after you load ExtUtils::MakeMaker).
+
+	sub ExtUtils::MM_Any::test_via_harness
+		{
+		my($self, $perl, $tests) = @_;
+	
+		return qq|\t$perl "-MTest::Manifest" | .
+			   qq|"-e" "run_t_manifest(\$(TEST_VERBOSE), '\$(INST_LIB)', | .
+			   qq|'\$(INST_ARCHLIB)')"\n|;
+		}
 
 =cut
 
