@@ -1,4 +1,4 @@
-# $Id$
+# $Id: Manifest.pm,v 1.3 2002/10/10 04:19:16 comdog Exp $
 package Test::Manifest;
 use strict;
 
@@ -11,8 +11,8 @@ use Exporter;
 @EXPORT    = qw(run_t_manifest);
 @EXPORT_OK = qw(get_t_files make_test_manifest manifest_name);
 
-#$VERSION = sprintf "%d.%02d", q$Revision$ =~ m/(\d+) . (\d+)/x;
-$VERSION = 0.8;
+#$VERSION = sprintf "%d.%02d", q$Revision: 1.3 $ =~ m/(\d+) . (\d+)/x;
+$VERSION = 0.9;
 
 my $Manifest = "t/test_manifest";
 
@@ -22,9 +22,7 @@ Test::Manifest - interact with a t/test_manifest file
 
 =head1 SYNOPSIS
 
-use Test::Manifest qw(get_t_files);
-
-WriteMakefile( ..., test => { TESTS => get_t_files() } );
+See the functions section.
 
 =head1 DESCRIPTION
 
@@ -152,7 +150,17 @@ sub manifest_name
 	}
 	
 =back
+
+=head1 SOURCE AVAILABILITY
+
+This source is part of a SourceForge project which always has the
+latest sources in CVS, as well as all of the previous releases.
+
+	https://sourceforge.net/projects/brian-d-foy/
 	
+If, for some reason, I disappear from the world, one of the other
+members of the project can shepherd this module appropriately.
+
 =head1 AUTHOR
 
 brian d foy, E<lt>bdfoy@cpan.orgE<lt>

@@ -1,12 +1,21 @@
-# $Id: 1.get_test_files.t,v 1.2 2002/09/30 05:56:00 comdog Exp $
+# $Id: 1.get_test_files.t,v 1.3 2002/10/10 04:19:16 comdog Exp $
 use strict;
 
-use Test::More tests => 9;
+use Test::More tests => 7;
 
 use Test::Manifest qw(get_t_files manifest_name);
-use Test::Data qw(Scalar);
 
 my $test_manifest = manifest_name();
+
+open IN, 'test_manifest' or 
+	print "bail out! Could not open test_manifest\n$!\n";
+
+open OUT, "> $test_manifest" or 
+	print "bail out! Could not open $test_manifest\n$!\n";
+
+while( <IN> ) { print OUT }
+close IN;
+close OUT;
 
 my @tests = ();
 
@@ -39,9 +48,9 @@ local $SIG{__WARN__} = sub { 1 };
 
 my $string = get_t_files();
 
-undef_ok( $string );
+ok( ! $string );
 
 my @array = get_t_files();
 
-undef_ok( $string );
+ok( ! $string );
 }

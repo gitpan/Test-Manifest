@@ -1,0 +1,4 @@
+$Id: Changes,v 1.2 2002/10/10 04:27:43 comdog Exp $
+
+0.9 - Thu Oct 10 00:27:13 EDT 2002
+	+ removed as many dependencies as possible
