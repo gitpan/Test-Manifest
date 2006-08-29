@@ -1,4 +1,20 @@
-$Id: Changes,v 1.9 2005/03/19 18:38:23 comdog Exp $
+$Id: Changes,v 1.11 2006/08/29 22:45:57 comdog Exp $
+
+1.16 - Tue Aug 29 17:43:16 2006
+	* Added an experimental feature to grab file names from additional
+	files. Just specify which other files to grab file names from:
+
+	;include names_in_this_file.txt
+
+	See the docs for get_t_files().
+
+	* This is an experimental feature. This feature is experimental.
+
+1.14 - Sat Mar 26 20:55:45 2005
+	* put paths together with File::Spec (so this should work on
+	Windows
+	* You can now define levels of testing with TEST_LEVEL (e.g.
+	make test TEST_LEVEL=2)
 
 1.13 - Sat Mar 19 12:36:04 2005
 	* Added POD Coverage tests
