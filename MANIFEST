@@ -1,8 +1,9 @@
 Changes
+examples/README
 lib/Manifest.pm
+LICENSE
 Makefile.PL
 MANIFEST			This list of files
-META.yml			Module meta-data (added by MakeMaker)
 README
 t/0.load.t
 t/1.get_test_files.t
@@ -16,3 +17,4 @@ t/trailing_space.t
 test_manifest
 test_manifest_levels
 test_manifest_with_include
+META.yml                                 Module meta-data (added by MakeMaker)

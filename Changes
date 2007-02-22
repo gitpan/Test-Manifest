@@ -1,4 +1,9 @@
-$Id: Changes,v 1.11 2006/08/29 22:45:57 comdog Exp $
+$Id: Changes 2167 2007-02-22 19:21:34Z comdog $
+
+1.17 - Thu Feb 22 13:20:23 2007
+	* Updated to Sourceforge's SVN repository
+	* Dist conforms to META 1.2 spec
+	* No feature changes, so no big hurry to upgrade
 
 1.16 - Tue Aug 29 17:43:16 2006
 	* Added an experimental feature to grab file names from additional
