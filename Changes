@@ -1,4 +1,7 @@
-$Id: Changes 2167 2007-02-22 19:21:34Z comdog $
+$Id: Changes 2314 2007-09-20 02:45:37Z comdog $
+
+1.21 - Wed Sep 19 19:45:27 2007
+	* [BUGFIX] getting rid of Test::More
 
 1.17 - Thu Feb 22 13:20:23 2007
 	* Updated to Sourceforge's SVN repository

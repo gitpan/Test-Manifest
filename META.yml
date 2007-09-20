@@ -1,9 +1,9 @@
 --- #YAML:1.0
 name:                Test-Manifest
-version:             1.17
+version:             1.21
 abstract:            ~
 license:             perl
-generated_by:        ExtUtils::MakeMaker version 6.31
+generated_by:        ExtUtils::MakeMaker version 6.32
 distribution_type:   module
 requires:     
     ExtUtils::MakeMaker:           6.03
