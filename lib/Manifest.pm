@@ -1,4 +1,4 @@
-# $Id: Manifest.pm 2313 2007-09-20 02:45:01Z comdog $
+# $Id: Manifest.pm 2349 2007-10-28 02:23:24Z comdog $
 package Test::Manifest;
 use strict;
 
@@ -11,7 +11,7 @@ use File::Spec::Functions qw(catfile);
 @EXPORT    = qw(run_t_manifest);
 @EXPORT_OK = qw(get_t_files make_test_manifest manifest_name);
 
-$VERSION = 1.21; #sprintf "%d.%02d", q$Revision: 2313 $ =~ m/ (\d+) \. (\d+) /x;
+$VERSION = 1.22;
 
 my $Manifest = catfile( "t", "test_manifest" );
 my %SeenInclude = ();

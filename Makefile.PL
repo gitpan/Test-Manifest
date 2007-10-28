@@ -1,4 +1,4 @@
-# $Id: Makefile.PL 2165 2007-02-22 19:15:19Z comdog $
+# $Id: Makefile.PL 2349 2007-10-28 02:23:24Z comdog $
 use ExtUtils::MakeMaker;
 
 require 5.006;
@@ -6,6 +6,7 @@ require 5.006;
 WriteMakefile
 	(
 	'NAME'          => 'Test::Manifest',
+	'ABSTRACT'      => 'interact with a t/test_manifest file',
 	'VERSION_FROM'  => 'lib/Manifest.pm',
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
