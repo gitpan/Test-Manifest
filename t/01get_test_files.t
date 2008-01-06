@@ -1,4 +1,4 @@
-# $Id: 1.get_test_files.t 1635 2005-03-27 02:30:24Z comdog $
+# $Id: 01get_test_files.t 2479 2008-01-06 20:18:10Z comdog $
 use strict;
 
 use Test::More tests => 13;
@@ -12,7 +12,7 @@ copy( 'test_manifest', manifest_name() );
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 my $expected = join " ", map { File::Spec->catfile( "t", $_ ) } qw(
-		0.load.t 1.get_test_files.t 1.make_test_manifest.t
+		00load.t 01get_test_files.t 01make_test_manifest.t
 		leading_space.t trailing_space.t
 		);
 
@@ -53,13 +53,13 @@ local $Test::Harness::verbose = 1;
 copy( 'test_manifest_levels', manifest_name() );
 
 my @expected = ( [] );
-$expected[1] = [ qw( 0.load.t 1.get_test_files.t pod_coverage.t) ];
-$expected[2] = [ qw( 0.load.t 1.get_test_files.t 1.make_test_manifest.t 
+$expected[1] = [ qw( 00load.t 01get_test_files.t pod_coverage.t) ];
+$expected[2] = [ qw( 00load.t 01get_test_files.t 01make_test_manifest.t 
 	pod_coverage.t ) ];
-$expected[3] = [ qw( 0.load.t 1.get_test_files.t 1.make_test_manifest.t 
+$expected[3] = [ qw( 00load.t 01get_test_files.t 01make_test_manifest.t 
 	leading_space.t pod_coverage.t trailing_space.t ) ];
-$expected[0] = [ qw( 0.load.t 1.get_test_files.t 1.make_test_manifest.t 
-	leading_space.t pod_coverage.t trailing_space.t 99.pod.t ) ];
+$expected[0] = [ qw( 00load.t 01get_test_files.t 01make_test_manifest.t 
+	leading_space.t pod_coverage.t trailing_space.t 99pod.t ) ];
 	
 foreach my $level ( 0 .. 3 )
 	{
@@ -70,14 +70,3 @@ foreach my $level ( 0 .. 3 )
 	}
 
 }
-
-__END__
-# this is a comment, then a blank line
-
-0.load.t
-1.get_test_files.t 1 
-1.make_test_manifest.t 2
-leading_space.t 2.9
-pod_coverage.t 1 # with a comment
-trailing_space.t 3 # with a comment
-99.pod.t	3.1  

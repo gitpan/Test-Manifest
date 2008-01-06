@@ -1,4 +1,4 @@
-# $Id: 1.make_test_manifest.t 484 2002-10-10 04:19:16Z comdog $
+# $Id: 01make_test_manifest.t 2478 2008-01-06 20:06:49Z comdog $
 
 use Test::More tests => 2;
 

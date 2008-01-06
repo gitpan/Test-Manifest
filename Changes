@@ -1,4 +1,9 @@
-$Id: Changes 2350 2007-10-28 02:24:12Z comdog $
+$Id: Changes 2480 2008-01-06 20:19:56Z comdog $
+
+1.22_01 - Sun Jan  6 14:18:46 2008
+	* Changed test file names to only have one dot in them so they
+	work on VMS and ODS-2 file systems: RT #32061
+	* This is a test release.
 
 1.22 - Sat Oct 27 21:24:10 2007
 	* distro cleanups after moving from CVS to SVN
