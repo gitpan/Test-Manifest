@@ -1,6 +1,9 @@
-# $Id: Manifest.pm 2478 2008-01-06 20:06:49Z comdog $
+# $Id: Manifest.pm 2506 2008-01-24 12:10:54Z comdog $
 package Test::Manifest;
 use strict;
+
+use warnings;
+no warnings;
 
 use base qw(Exporter);
 use vars qw(@EXPORT_OK @EXPORT $VERSION);
@@ -11,7 +14,7 @@ use File::Spec::Functions qw(catfile);
 @EXPORT    = qw(run_t_manifest);
 @EXPORT_OK = qw(get_t_files make_test_manifest manifest_name);
 
-$VERSION = '1.22_01';
+$VERSION = '1.22_02';
 
 my $Manifest = catfile( "t", "test_manifest" );
 my %SeenInclude = ();

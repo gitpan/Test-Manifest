@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Test-Manifest
-version:             1.22_01
+version:             1.22_02
 abstract:            interact with a t/test_manifest file
 license:             perl
 generated_by:        ExtUtils::MakeMaker version 6.36

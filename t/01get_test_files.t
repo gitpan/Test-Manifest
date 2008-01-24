@@ -1,4 +1,4 @@
-# $Id: 01get_test_files.t 2479 2008-01-06 20:18:10Z comdog $
+# $Id: 01get_test_files.t 2506 2008-01-24 12:10:54Z comdog $
 use strict;
 
 use Test::More tests => 13;
@@ -34,9 +34,18 @@ foreach my $i ( 0 .. $#array )
 {
 local $SIG{__WARN__} = sub { 1 };
 
-( unlink manifest_name() ) ? 
-	pass( "test_manifest unlinked") : 
-	fail( "test_manifest still around after unlink!");
+if( $^O eq 'VMS' ) 	# http://perldoc.perl.org/perlvms.html#unlink-LIST
+	{
+	1 while ( unlink manifest_name() );
+	} 
+else 
+	{
+	unlink manifest_name();
+	}
+
+-e manifest_name() ? 
+	fail( "test_manifest still around after unlink!") :
+	pass( "test_manifest unlinked") ;
 
 my $string = get_t_files();
 
