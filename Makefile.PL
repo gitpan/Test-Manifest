@@ -1,4 +1,3 @@
-# $Id: Makefile.PL 2349 2007-10-28 02:23:24Z comdog $
 use ExtUtils::MakeMaker;
 
 require 5.006;
@@ -21,10 +20,7 @@ WriteMakefile
 		'lib/Manifest.pm'  => '$(INST_LIBDIR)/Manifest.pm',
 		},
 	  
-	'MAN3PODS' =>
-		{
-		'lib/Manifest.pm' => '$(INST_MAN3DIR)/Test::Manifest.3',
-		},
+	'MAN3PODS' => {},
 		
 	clean => { FILES => 'Test-Manifest-* t/test_manifest' },
 	);

@@ -1,4 +1,3 @@
-# $Id: 01get_test_files.t 2506 2008-01-24 12:10:54Z comdog $
 use strict;
 
 use Test::More tests => 13;

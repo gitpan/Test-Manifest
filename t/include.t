@@ -1,4 +1,3 @@
-# $Id: include.t 2479 2008-01-06 20:18:10Z comdog $
 use strict;
 
 use Test::More tests => 4;

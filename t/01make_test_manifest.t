@@ -1,5 +1,3 @@
-# $Id: 01make_test_manifest.t 2506 2008-01-24 12:10:54Z comdog $
-
 use Test::More tests => 2;
 
 use Test::Manifest qw(make_test_manifest);
